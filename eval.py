@@ -9,7 +9,7 @@ from torchvision import transforms
 from pynput import keyboard
 from pynput.mouse import Controller as MouseController, Button
 from pynput.keyboard import Controller as KeyboardController
-
+from lib.input import move_mouse
 
 # ============================================================
 # Configuration
@@ -267,7 +267,8 @@ def apply_output(
     move_y = int(dy * SENSITIVITY)
 
     if move_x != 0 or move_y != 0:
-        mouse.move(move_x, move_y)
+        move_mouse(move_x, move_y)
+        # mouse.move(move_x, move_y)
 
     # --------------------------------------------------------
     # Mouse buttons
